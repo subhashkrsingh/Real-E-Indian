@@ -107,6 +107,7 @@ export default function CompanyDetail() {
   const ticker = (location.match(/\/company\/(.+)/) || [])[1];
   const company = COMPANY_DETAILS[ticker] || COMPANY_DETAILS['DLF.NS'];
   const isPositive = company.changePercent >= 0;
+  const currentYear = new Date().getFullYear();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -228,6 +229,12 @@ export default function CompanyDetail() {
           </div>
         </div>
       </div>
+
+      <footer className="border-t border-border/60 bg-card/30 mt-10">
+        <p className="px-4 md:px-6 py-4 text-center text-xs md:text-sm text-muted-foreground">
+          © {currentYear} Indian Real Estate Dashboard - SubhashKrSingh. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }

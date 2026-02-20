@@ -148,6 +148,7 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState<'marketCap' | 'change'>('marketCap');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const currentYear = new Date().getFullYear();
 
   // Handle search
   useEffect(() => {
@@ -289,6 +290,12 @@ export default function Home() {
           )}
         </div>
       </div>
+
+      <footer className="border-t border-border/60 bg-card/30 mt-10">
+        <p className="px-4 md:px-6 py-4 text-center text-xs md:text-sm text-muted-foreground">
+          © {currentYear} Indian Real Estate Dashboard - SubhashKrSingh. All rights reserved.
+        </p>
+      </footer>
     </div>
   );
 }
